@@ -1,3 +1,4 @@
+/* eslint-disable import/no-webpack-loader-syntax */
 // Import React
 import React from 'react';
 
@@ -5,8 +6,10 @@ import React from 'react';
 import {
   BlockQuote,
   Cite,
+  CodePane,
   Deck,
   Heading,
+  Link,
   ListItem,
   List,
   Quote,
@@ -30,7 +33,7 @@ const theme = createTheme(
   {
     primary: 'Montserrat',
     secondary: 'Helvetica',
-  }
+  },
 );
 
 export default class Presentation extends React.Component {
@@ -88,6 +91,65 @@ export default class Presentation extends React.Component {
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
           </BlockQuote>
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Null, undefined and maybe,
+          </Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            a tale of uncertainty
+          </Text>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>What is uncertainty ?</Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>What is uncertainty ?</Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>Which is not of a fixed nature.</Heading>
+        </Slide>
+        <Slide>
+        <List ordered>
+            <ListItem>Javascript</ListItem>
+            <ListItem>Python</ListItem>
+            <ListItem>Java</ListItem>
+            <ListItem>PHP</ListItem>
+            <ListItem>C++</ListItem>
+            <ListItem>C</ListItem>
+            <ListItem>Ruby</ListItem>
+            <ListItem>Go</ListItem>
+            <ListItem>Swift</ListItem>
+            <ListItem>Kotlin</ListItem>
+          </List>
+          <Link target="_blank" href="https://insights.stackoverflow.com/survey/2019#most-popular-technologies">stackoverflow - 2019#most-popular-technologies</Link>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>There is one common point between this languages</Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <List>
+            <ListItem>null</ListItem>
+            <ListItem>nil</ListItem>
+            <ListItem>None</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>Java</Heading>
+          <CodePane src={require('!raw-loader!./assets/ok.java')}/>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>Java</Heading>
+          <CodePane src={require('!raw-loader!./assets/null.java')}/>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/cranky-solomon-n79iy?fontsize=14&previewwindow=tests"
+            title="cranky-solomon-n79iy"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            style={{width: '1000px', height: '700px', border: 0, borderRadius: '4px', overflow: 'hidden'}}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
         </Slide>
       </Deck>
     );
