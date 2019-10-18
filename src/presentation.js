@@ -74,7 +74,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading fit>Which is not of a fixed nature.</Heading>
-          <Heading fit>Ce qui n'est pas d'une nature bien arrêté</Heading>
+          <Heading fit>Ce qui n'est pas d'une nature bien arrêté.</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Image src={images.chatSchrodinger.replace('/', '')} />
@@ -105,7 +105,7 @@ export default class Presentation extends React.Component {
           </Link>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>There is one common point between this languages</Heading>
+          <Heading>There is one similarity between these languages</Heading>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
           <Heading>null</Heading>
@@ -136,33 +136,33 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading>Every time you use a value it may not exist.</Heading>
+          <Heading>Every time you use a value, it may not exist</Heading>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading>For all those 10 most popular languages.</Heading>
+          <Heading>For all these 10 most popular languages</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>What does it mean for an application ?</Heading>
+          <Heading>What does it mean for an application?</Heading>
         </Slide>
         <Slide transition={['zoom']} bgColor="secondary" textColor="primary">
           <Image src={images.blueScreen.replace('/', '')} />
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <List ordered>
-            <ListItem>Crash</ListItem>
-            <ListItem>Inconsistent behavior</ListItem>
+            <ListItem>Crashes</ListItem>
+            <ListItem>Inconsistent behaviors</ListItem>
             <ListItem>Application stuck in a specific state</ListItem>
             <ListItem>...</ListItem>
           </List>
           <Text textColor="tertiary">
-            All those issue are more or less hard to debug and fix
+            All these issues are more or less hard to debug and fix.
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How does those errors appear ?</Heading>
+          <Heading>How do these errors appear?</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How does null value appear ?</Heading>
+          <Heading>How do null values appear?</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <List ordered>
@@ -185,22 +185,22 @@ export default class Presentation extends React.Component {
           </Link>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Lets focus on Javascript</Heading>
+          <Heading>Let's focus on Javascript!</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading>Why ?</Heading>
           <List>
-            <ListItem>Im a javascript developper</ListItem>
-            <ListItem>The language have a NULL</ListItem>
+            <ListItem>I am a Javascript developer</ListItem>
+            <ListItem>The language has a NULL</ListItem>
             <ListItem>And also UNDEFINED</ListItem>
           </List>
           <Text textColor="tertiary">We are so lucky</Text>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How does null value appear ?</Heading>
+          <Heading>How do null values appear?</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Typo</Heading>
+          <Heading>Typos</Heading>
           <BigCodePane
             className="code__big"
             lang="javascript"
@@ -223,9 +223,9 @@ export default class Presentation extends React.Component {
         <Slide transition={['fade']} bgColor="primary">
           <Heading>It should not happen</Heading>
           <List>
-            <ListItem>Should be already been loaded</ListItem>
+            <ListItem>Should have been loaded already</ListItem>
             <ListItem>Loading should not fail</ListItem>
-            <ListItem>there is no way we have inconsistent data</ListItem>
+            <ListItem>There is no way to have inconsistent data</ListItem>
           </List>
         </Slide>
         <Slide transition={['zoom']} bgColor="secondary" textColor="primary">
@@ -233,29 +233,29 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading>
-            A program <strong style={{ color: 'red' }}>consume</strong> many
+            A program <strong style={{ color: 'red' }}>consumes</strong> many
             values that may exist or not
           </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading>
-            A program <strong style={{ color: 'red' }}>produce</strong> many
+            A program <strong style={{ color: 'red' }}>produces</strong> many
             values that may exist or not
           </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <List>
-            <ListItem>Because of non existant input values</ListItem>
-            <ListItem>values of wrong shape</ListItem>
-            <ListItem>Mistake</ListItem>
+            <ListItem>Because of non-existent input values</ListItem>
+            <ListItem>Wrongly shaped values</ListItem>
+            <ListItem>Mistakes</ListItem>
             <ListItem>Or impossible calculations</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How to deal with it ?</Heading>
+          <Heading>How to deal with it?</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>For each function check the parameters</Heading>
+          <Heading>For each function, check the parameters</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <BigCodePane
@@ -265,13 +265,13 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>It unsustainable</Heading>
+          <Heading>It is unsustainable</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary" textColor="primary">
           <Heading>Each time you check for a value existance</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary" textColor="primary">
-          <Heading>You should have to make a decision</Heading>
+          <Heading>You should make a decision</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <BigCodePane
@@ -302,7 +302,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading>
-            Consider that your functions may produce nullable value
+            Consider that your functions may produce nullable values
           </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
@@ -314,23 +314,23 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How is this supposed to help ?</Heading>
+          <Heading>How is this supposed to help?</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading fit>Deal with dangerous nullable values</Heading>
-          <Heading fit>in a few known place</Heading>
+          <Heading fit>in a few known places</Heading>
           <List>
-            <ListItem>this way you take less decision</ListItem>
-            <ListItem>if an error happen you know were to look at</ListItem>
-            <ListItem>rest of your code can be simple</ListItem>
+            <ListItem>In order to make less decisions</ListItem>
+            <ListItem>if an error happens, you will know where to look</ListItem>
+            <ListItem>The rest of your code can be simple</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading>Tip number 2</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading fit>Switch to a non top ten language,</Heading>
-          <Heading fit>that do not have null concept in it</Heading>
+          <Heading fit>Switch to a non-top ten language,</Heading>
+          <Heading fit>that does not allow the null concept</Heading>
           <List>
             <ListItem>Purescript</ListItem>
             <ListItem>Elm</ListItem>
@@ -343,11 +343,11 @@ export default class Presentation extends React.Component {
           <Heading>OK</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading fit>Check those language on how</Heading>
-          <Heading fit>they deal with non existant values</Heading>
+          <Heading fit>Check these languages and how</Heading>
+          <Heading fit>they deal with non-existent values</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>And adapt it to javascript</Heading>
+          <Heading>And translate it to Javascript</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading>Remember our famous cat ?</Heading>
@@ -357,13 +357,13 @@ export default class Presentation extends React.Component {
           <Heading fit>Maybe = Just value | Nothing</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading fit>Lets build a smart cardboard box</Heading>
+          <Heading fit>Let's build a smart cardboard box</Heading>
           <List>
-            <ListItem>Should be easy to build</ListItem>
+            <ListItem>Should be easy to use</ListItem>
             <ListItem>
-              Force us to handle the case where the value does not exist
+              Forces us to handle the case where the value does not exist
             </ListItem>
-            <ListItem>Lets call it Maybe</ListItem>
+            <ListItem>Let's call it Maybe</ListItem>
             <ListItem>It could be Just a value</ListItem>
             <ListItem>Or Nothing</ListItem>
           </List>
@@ -395,11 +395,11 @@ export default class Presentation extends React.Component {
           ></iframe>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Lets enhance again this Maybe thing</Heading>
+          <Heading>Let's enhance this Maybe thing</Heading>
           <List>
             <ListItem>Transforming the value should be easier</ListItem>
             <ListItem>Without having to rely on fold everytime</ListItem>
-            <ListItem>Without loosing safety</ListItem>
+            <ListItem>Without losing safety</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
@@ -410,10 +410,10 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Lets call it map</Heading>
+          <Heading>Let's call it map</Heading>
           <List>
             <ListItem>
-              Should apply safely the function to the maybe value
+              Should apply the function safely to the Maybe value
             </ListItem>
             <ListItem>Should return the same kind of "container"</ListItem>
           </List>
@@ -445,11 +445,11 @@ export default class Presentation extends React.Component {
           ></iframe>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Multiple Maybe value</Heading>
+          <Heading>Multiple Maybe values</Heading>
           <List>
-            <ListItem>Produce a value from two maybe or more Maybe</ListItem>
-            <ListItem>Without having to consider all case by hand</ListItem>
-            <ListItem>While still producing value in our safe maybe</ListItem>
+            <ListItem>Produce a value from two or more Maybes</ListItem>
+            <ListItem>Without having to consider all cases specifically</ListItem>
+            <ListItem>While still producing value in our safe Maybe</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
@@ -499,7 +499,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading fit>Producing a Nothing from a Just</Heading>
-          <Heading fit>Example is data validation</Heading>
+          <Heading fit>Example : Data validation</Heading>
         </Slide>
         <Slide
           transition={['fade']}
@@ -532,7 +532,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading fit>A few libs that provide</Heading>
-          <Heading fit>Maybe/Option and more</Heading>
+          <Heading fit>Maybe, Option and more...</Heading>
           <List>
             <ListItem>https://monet.github.io/monet.js/</ListItem>
             <ListItem>https://folktale.origamitower.com/</ListItem>
@@ -540,7 +540,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Handling async resource - Dataway</Heading>
+          <Heading>Handling async resources - Dataway</Heading>
           <List>
             <ListItem>Modeled with 4 state</ListItem>
             <ListItem>NotAsked, Loading, Failure, Success</ListItem>
@@ -555,7 +555,7 @@ export default class Presentation extends React.Component {
               @catelandaxel
             </Link>
           </Heading>
-          <Heading fit>Working at Iadvize</Heading>
+          <Heading fit>Working at iAdvize</Heading>
           <Heading>
             <Link target="_blank" href="https://twitter.com/iadvize/">
               @iadvize
