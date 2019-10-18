@@ -1,3 +1,3 @@
 String foo = null;
-String bar = cde.substring(0, 5);
+String bar = foo.substring(0, 5);
 // => NullPointerException

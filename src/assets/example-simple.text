@@ -1,0 +1,13 @@
+Maybe.of(🌽) => Just(🌽)
+
+Maybe.fromNullable(🌽)
+// => Just(🌽)
+Maybe.fromNullable(❌)
+// => 
+
+Just(🌽).fold(
+    () => A , // on Nothing
+    (🌽) => A // on Just
+)
+// => A
+Nothing.fold(() => A ,(🌽) => A) => A

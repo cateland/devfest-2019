@@ -1,0 +1,4 @@
+checkMaize = 🌽 => Just(🌽) | Nothing
+
+Just(🌽).chain(checkMaize) => Just(🌽)
+Just(🐈).chain(checkMaize) => Nothing

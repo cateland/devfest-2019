@@ -1,3 +1,3 @@
 String foo = new String("Hello World!");
-String bar = cde.substring(0, 5);
+String bar = foo.substring(0, 5);
 // => "Hello"

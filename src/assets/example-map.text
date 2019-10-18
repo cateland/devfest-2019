@@ -1,0 +1,6 @@
+cookPopcorn = 🌽 => 🍿
+
+Just(🌽).map(cookPopcorn)
+// => Just(🍿)
+Nothing.map(cookPopcorn)
+// => Nothing
