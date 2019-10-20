@@ -1,0 +1,11 @@
+Just(🌽).fold(
+    () => A , // on Nothing
+    (🌽) => A' // on Just
+)
+// => A
+
+Nothing.fold(
+    () => A , // on Nothing
+    (🌽) => A' // on Just
+)
+// => A'

@@ -20,6 +20,8 @@ import {
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
 
+import CodeSlide from 'spectacle-code-slide';
+
 // Require CSS
 require('normalize.css');
 
@@ -44,10 +46,6 @@ const theme = createTheme(
     secondary: 'Helvetica',
   },
 );
-
-const BigCodePane = styled(CodePane)`
-  font-size: 2rem;
-`;
 
 const RedListItem = styled(ListItem)`
   color: red;
@@ -104,7 +102,7 @@ export default class Presentation extends React.Component {
             stackoverflow - 2019#most-popular-technologies
           </Link>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+        <Slide transition={['fade']} bgColor="primary">
           <Heading>There is one similarity between these languages</Heading>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
@@ -117,29 +115,34 @@ export default class Presentation extends React.Component {
           <Heading>None</Heading>
         </Slide>
         <Slide transition={['zoom']} bgColor="secondary" textColor="primary">
-          <Heading>What is the problem with null ?</Heading>
+          <Heading>
+            What is the problem with{' '}
+            <strong style={{ color: 'red' }}>null</strong> ?
+          </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Java</Heading>
-          <BigCodePane
+          <Heading>Typescript</Heading>
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
-            source={require('!raw-loader!./assets/ok.java')}
+            source={require('!raw-loader!./assets/ok.ts')}
           />
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Java</Heading>
-          <BigCodePane
+          <Heading>Typescript</Heading>
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
-            source={require('!raw-loader!./assets/null.java')}
+            source={require('!raw-loader!./assets/null.ts')}
           />
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
           <Heading>Every time you use a value, it may not exist</Heading>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading>For all these 10 most popular languages</Heading>
+          <Heading>For the 10 most popular languages</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading>What does it mean for an application?</Heading>
@@ -159,10 +162,15 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How do these errors appear?</Heading>
+          <Heading>
+            How do these <strong style={{ color: 'red' }}>errors</strong>{' '}
+            appear?
+          </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How do null values appear?</Heading>
+          <Heading>
+            How do <strong style={{ color: 'red' }}>null</strong> values appear?
+          </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <List ordered>
@@ -201,7 +209,8 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading>Typos</Heading>
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/typo.js')}
@@ -214,7 +223,8 @@ export default class Presentation extends React.Component {
           <Heading>It should not happen</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/find.js')}
@@ -258,14 +268,15 @@ export default class Presentation extends React.Component {
           <Heading>For each function, check the parameters</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/check.js')}
           />
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>It is unsustainable</Heading>
+          <Heading fit>It is unsustainable</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary" textColor="primary">
           <Heading>Each time you check for a value existance</Heading>
@@ -274,7 +285,8 @@ export default class Presentation extends React.Component {
           <Heading>You should make a decision</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/checkplus.js')}
@@ -294,7 +306,8 @@ export default class Presentation extends React.Component {
         <Slide transition={['fade']} bgColor="primary">
           <Heading fit>Consider that your functions</Heading>
           <Heading fit>should not consume nullable</Heading>
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/nocheck.js')}
@@ -307,9 +320,9 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <List>
-            <ListItem>find</ListItem>
-            <ListItem>get</ListItem>
-            <ListItem>➗</ListItem>
+            <ListItem>Array.find => nullable</ListItem>
+            <ListItem>Map.get => nullable</ListItem>
+            <ListItem>42 ➗ 0 => nullable</ListItem>
             <ListItem>...</ListItem>
           </List>
         </Slide>
@@ -321,7 +334,9 @@ export default class Presentation extends React.Component {
           <Heading fit>in a few known places</Heading>
           <List>
             <ListItem>In order to make less decisions</ListItem>
-            <ListItem>if an error happens, you will know where to look</ListItem>
+            <ListItem>
+              if an error happens, you will know where to look
+            </ListItem>
             <ListItem>The rest of your code can be simple</ListItem>
           </List>
         </Slide>
@@ -350,39 +365,9 @@ export default class Presentation extends React.Component {
           <Heading>And translate it to Javascript</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>Remember our famous cat ?</Heading>
-          <Image src={images.chatSchrodinger.replace('/', '')} />
-        </Slide>
-        <Slide transition={['fade']} bgColor="primary">
-          <Heading fit>Maybe = Just value | Nothing</Heading>
-        </Slide>
-        <Slide transition={['fade']} bgColor="primary">
-          <Heading fit>Let's build a smart cardboard box</Heading>
-          <List>
-            <ListItem>Should be easy to use</ListItem>
-            <ListItem>
-              Forces us to handle the case where the value does not exist
-            </ListItem>
-            <ListItem>Let's call it Maybe</ListItem>
-            <ListItem>It could be Just a value</ListItem>
-            <ListItem>Or Nothing</ListItem>
-          </List>
-        </Slide>
-        <Slide
-          transition={['fade']}
-          bgColor="primary"
-          align="flex-start center"
-        >
-          <BigCodePane
-            className="code__big"
-            lang="javascript"
-            source={require('!raw-loader!./assets/example-simple.text')}
-          />
-        </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
-            src="https://codesandbox.io/embed/simple-8lo6b?fontsize=14"
-            title="Simple"
+            src="https://codesandbox.io/embed/simple-before-8lo6b?fontsize=14"
+            title="Creation"
             allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
             style={{
               width: '1000px',
@@ -394,44 +379,88 @@ export default class Presentation extends React.Component {
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           ></iframe>
         </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading>Remember our famous cat ?</Heading>
+          <Image src={images.chatSchrodinger.replace('/', '')} />
+        </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Let's enhance this Maybe thing</Heading>
+          <Heading fit>Let's build a smart cardboard box</Heading>
           <List>
-            <ListItem>Transforming the value should be easier</ListItem>
-            <ListItem>Without having to rely on fold everytime</ListItem>
-            <ListItem>Without losing safety</ListItem>
+            <ListItem>Should be easy to use</ListItem>
+            <ListItem>Clear distinction between value and no value</ListItem>
+            <ListItem>
+              Forces us to handle the case where the value does not exist
+            </ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <BigCodePane
+          <Heading>Maybe</Heading>
+          <CodePane
             className="code__big"
             lang="javascript"
-            source={require('!raw-loader!./assets/map.js')}
+            theme="external"
+            source={require('!raw-loader!./assets/maybe.text')}
           />
         </Slide>
-        <Slide transition={['fade']} bgColor="primary">
-          <Heading>Let's call it map</Heading>
-          <List>
-            <ListItem>
-              Should apply the function safely to the Maybe value
-            </ListItem>
-            <ListItem>Should return the same kind of "container"</ListItem>
-          </List>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('!raw-loader!./assets/example1/maybe.js')}
+          ranges={[
+            { loc: [0, 25], note: 'Maybe' },
+            { loc: [0, 1], note: 'Maybe' },
+            { loc: [13, 14], note: 'Maybe = Nothing' },
+            { loc: [19, 20], note: 'Maybe = Nothing | Just' },
+            { loc: [0, 4], note: 'Maybe = Nothing | Just' },
+            { loc: [5, 11], note: 'Maybe = Nothing | Just value' },
+            { loc: [13, 18] },
+            { loc: [19, 24] },
+          ]}
+        />
+        <Slide
+          transition={['fade']}
+          bgColor="primary"
+          align="flex-start center"
+        >
+          <Heading>Creation</Heading>
+          <CodePane
+            className="code__big"
+            lang="javascript"
+            theme="external"
+            source={require('!raw-loader!./assets/example-simple.text')}
+          />
         </Slide>
         <Slide
           transition={['fade']}
           bgColor="primary"
           align="flex-start center"
         >
-          <BigCodePane
+          <Heading>Release</Heading>
+          <CodePane
             className="code__big"
             lang="javascript"
-            source={require('!raw-loader!./assets/example-map.text')}
+            theme="external"
+            source={require('!raw-loader!./assets/example-simple2.text')}
           />
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
-            src="https://codesandbox.io/embed/map-qtjyo?fontsize=14"
+            src="https://codesandbox.io/embed/simple-after-hpcys?fontsize=14"
+            title="Creation after"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            style={{
+              width: '1000px',
+              height: '700px',
+              border: 0,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/map-before-qtjyo?fontsize=14"
             title="Map"
             allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
             style={{
@@ -445,18 +474,116 @@ export default class Presentation extends React.Component {
           ></iframe>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Multiple Maybe values</Heading>
+          <Heading fit>Let's enhance this Maybe</Heading>
           <List>
-            <ListItem>Produce a value from two or more Maybes</ListItem>
-            <ListItem>Without having to consider all cases specifically</ListItem>
-            <ListItem>While still producing value in our safe Maybe</ListItem>
+            <ListItem>Transforming a maybe value should be simple</ListItem>
+            <ListItem>Without having to fold so early</ListItem>
+            <ListItem>Without losing safety</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Ap</Heading>
+          <CodePane
+            theme="external"
+            className="code__big"
+            lang="javascript"
+            source={require('!raw-loader!./assets/map.js')}
+          />
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>Let's call it map</Heading>
           <List>
-            <ListItem>Apply a function from inside a Maybe</ListItem>
-            <ListItem>To a data inside another Maybe</ListItem>
+            <ListItem>
+              Apply a <strong style={{ color: 'red' }}>function</strong> safely{' '}
+            </ListItem>
+            <ListItem>
+              to a Maybe <strong style={{ color: 'red' }}>value</strong>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide
+          transition={['fade']}
+          bgColor="primary"
+          align="flex-start center"
+        >
+          <CodePane
+            theme="external"
+            className="code__big"
+            lang="javascript"
+            source={require('!raw-loader!./assets/example-map.text')}
+          />
+        </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('!raw-loader!./assets/example2/maybe.js')}
+          ranges={[
+            { loc: [0, 33] },
+            { loc: [0, 12] },
+            { loc: [13, 14] },
+            { loc: [18, 21] },
+            { loc: [23, 24] },
+            { loc: [28, 31] },
+          ]}
+        />
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/map-after-8eigw?fontsize=14"
+            title="Map After"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            style={{
+              width: '1000px',
+              height: '700px',
+              border: 0,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/apply-before-yycuc?fontsize=14"
+            title="Application"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            style={{
+              width: '1000px',
+              height: '700px',
+              border: 0,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/apply-after-jb6ub?fontsize=14"
+            title="Application - after"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            style={{
+              width: '1000px',
+              height: '700px',
+              border: 0,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>Handling multiple Maybe values</Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>Apply</Heading>
+          <List>
+            <ListItem>
+              Apply a <strong style={{ color: 'red' }}>function</strong> from
+              inside a Maybe
+            </ListItem>
+            <ListItem>
+              To a <strong style={{ color: 'red' }}>value</strong> inside
+              another Maybe
+            </ListItem>
             <ListItem>To produce a new Maybe</ListItem>
           </List>
         </Slide>
@@ -465,7 +592,8 @@ export default class Presentation extends React.Component {
           bgColor="primary"
           align="flex-start center"
         >
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/example-ap.text')}
@@ -476,16 +604,30 @@ export default class Presentation extends React.Component {
           bgColor="primary"
           align="flex-start center"
         >
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/example-ap2.text')}
           />
         </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('!raw-loader!./assets/example3/maybe.js')}
+          ranges={[
+            { loc: [0, 41] },
+            { loc: [0, 12] },
+            { loc: [13, 14] },
+            { loc: [22, 25] },
+            { loc: [27, 28] },
+            { loc: [36, 39] },
+          ]}
+        />
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
-            src="https://codesandbox.io/embed/applicative-yycuc?fontsize=14"
-            title="Ap"
+            src="https://codesandbox.io/embed/complete-after-qrl1c?fontsize=14"
+            title="Chain after"
             allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
             style={{
               width: '1000px',
@@ -498,7 +640,10 @@ export default class Presentation extends React.Component {
           ></iframe>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading fit>Producing a Nothing from a Just</Heading>
+          <Heading fit>
+            From a <strong style={{ color: 'red' }}>Just</strong> producing a{' '}
+            <strong style={{ color: 'red' }}>Nothing</strong>
+          </Heading>
           <Heading fit>Example : Data validation</Heading>
         </Slide>
         <Slide
@@ -506,27 +651,26 @@ export default class Presentation extends React.Component {
           bgColor="primary"
           align="flex-start center"
         >
-          <BigCodePane
+          <CodePane
+            theme="external"
             className="code__big"
             lang="javascript"
             source={require('!raw-loader!./assets/example-chain.text')}
           />
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <iframe
-            src="https://codesandbox.io/embed/complete-2bzlx?fontsize=14"
-            title="Chain"
-            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-            style={{
-              width: '1000px',
-              height: '700px',
-              border: 0,
-              borderRadius: '4px',
-              overflow: 'hidden',
-            }}
-            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-          ></iframe>
-        </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('!raw-loader!./assets/example4/maybe.js')}
+          ranges={[
+            { loc: [0, 49] },
+            { loc: [0, 12] },
+            { loc: [13, 14] },
+            { loc: [26, 29] },
+            { loc: [31, 32] },
+            { loc: [44, 47] },
+          ]}
+        />
         <Slide transition={['fade']} bgColor="primary">
           <Heading>We have pretty much covered our bases</Heading>
         </Slide>
@@ -540,7 +684,12 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Handling async resources - Dataway</Heading>
+          <Heading>Reading</Heading>
+          <Text>https://mostly-adequate.gitbooks.io/</Text>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading fit>Handling async resources</Heading>
+          <Heading>Dataway</Heading>
           <List>
             <ListItem>Modeled with 4 state</ListItem>
             <ListItem>NotAsked, Loading, Failure, Success</ListItem>
@@ -549,18 +698,26 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          <Heading>Axel CATELAND</Heading>
+          <Heading size={3}>Axel CATELAND</Heading>
           <Heading>
             <Link target="_blank" href="https://twitter.com/catelandaxel">
               @catelandaxel
             </Link>
           </Heading>
-          <Heading fit>Working at iAdvize</Heading>
+          <Heading size={3}>Working at iAdvize</Heading>
           <Heading>
             <Link target="_blank" href="https://twitter.com/iadvize/">
               @iadvize
             </Link>
           </Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>Thanks</Heading>
+          <List>
+            <ListItem>Guillaume CLOCHARD</ListItem>
+            <ListItem>Victor GRAFFARD</ListItem>
+            <ListItem>Nicolas DECLERCQ</ListItem>
+          </List>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading fit>Questions</Heading>

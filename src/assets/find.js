@@ -1,9 +1,10 @@
-const blogposts =[
-    {id: 'postid1', authorid: 'authorid1', content: '...'}
+const musicTracks = [
+  { id: 'musicId', groupId: 'groupId1', name: 'Smells Like Teen Spirit' },
 ];
-const authors = [
-    {id: 'authorid2', name: 'angryjsdevelopper'}
-];
-const firstBlogPostAuthorName =
-    authors.find(author => author.id === blogposts[0]).name;
+const groups = [{ id: 'groupId2', name: 'Foo Fighters' }];
+
+const firstMusicGroup = groups.find(
+  group => group.id === musicTracks[0],
+);
+const groupName = firstMusicGroup.name;
 // => [Error] TypeError: undefined is not an object

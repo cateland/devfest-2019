@@ -1,4 +1,4 @@
-const person = { username: 'ElmLover2019', age: 35};
+const group = { name: 'Foo Fighters' };
 
-person.username.toUpperCase();
+group.namme.toUpperCase();
 // => [Error] TypeError: undefined is not an object

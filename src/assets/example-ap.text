@@ -1,4 +1,6 @@
 cookPopcorn = 🌽 => 🍯 => 🍿
 
-Just(cookPopcorn).ap(Just(🌽)) => Just(🍯 => 🍿)
-Just(🍯 => 🍿).ap(Just(🍯)) => Just(🍿)
+Just(cookPopcorn).apply(Just(🌽))
+// => Just(🍯 => 🍿)
+Just(🍯 => 🍿).apply(Just(🍯))
+// => Just(🍿)
