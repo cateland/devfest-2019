@@ -126,7 +126,7 @@ export default class Presentation extends React.Component {
             theme="external"
             className="code__big"
             lang="javascript"
-            source={require('!raw-loader!./assets/ok.ts')}
+            source={require('!raw-loader!./assets/ok.text')}
           />
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
@@ -135,7 +135,7 @@ export default class Presentation extends React.Component {
             theme="external"
             className="code__big"
             lang="javascript"
-            source={require('!raw-loader!./assets/null.ts')}
+            source={require('!raw-loader!./assets/null.text')}
           />
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
@@ -199,13 +199,19 @@ export default class Presentation extends React.Component {
           <Heading>Why ?</Heading>
           <List>
             <ListItem>I am a Javascript developer</ListItem>
-            <ListItem>The language has a NULL</ListItem>
-            <ListItem>And also UNDEFINED</ListItem>
+            <ListItem>
+              The language has a <strong style={{ color: 'red' }}>NULL</strong>
+            </ListItem>
+            <ListItem>
+              And also <strong style={{ color: 'red' }}>UNDEFINED</strong>
+            </ListItem>
           </List>
           <Text textColor="tertiary">We are so lucky</Text>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading>How do null values appear?</Heading>
+          <Heading>
+            How do <strong style={{ color: 'red' }}>null</strong> values appear?
+          </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <Heading>Typos</Heading>
@@ -257,8 +263,8 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem>Because of non-existent input values</ListItem>
             <ListItem>Wrongly shaped values</ListItem>
+            <ListItem>Impossible calculations</ListItem>
             <ListItem>Mistakes</ListItem>
-            <ListItem>Or impossible calculations</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
@@ -333,10 +339,8 @@ export default class Presentation extends React.Component {
           <Heading fit>Deal with dangerous nullable values</Heading>
           <Heading fit>in a few known places</Heading>
           <List>
-            <ListItem>In order to make less decisions</ListItem>
-            <ListItem>
-              if an error happens, you will know where to look
-            </ListItem>
+            <ListItem>To make less decisions</ListItem>
+            <ListItem>You will know where to look for errors</ListItem>
             <ListItem>The rest of your code can be simple</ListItem>
           </List>
         </Slide>
@@ -411,10 +415,6 @@ export default class Presentation extends React.Component {
             { loc: [0, 1], note: 'Maybe' },
             { loc: [13, 14], note: 'Maybe = Nothing' },
             { loc: [19, 20], note: 'Maybe = Nothing | Just' },
-            { loc: [0, 4], note: 'Maybe = Nothing | Just' },
-            { loc: [5, 11], note: 'Maybe = Nothing | Just value' },
-            { loc: [13, 18] },
-            { loc: [19, 24] },
           ]}
         />
         <Slide
@@ -430,6 +430,20 @@ export default class Presentation extends React.Component {
             source={require('!raw-loader!./assets/example-simple.text')}
           />
         </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('!raw-loader!./assets/example1/maybe.js')}
+          ranges={[
+            { loc: [0, 25], note: 'Maybe = Nothing | Just' },
+            { loc: [0, 1], note: 'Maybe = Nothing | Just' },
+            { loc: [5, 6], note: 'Maybe = Nothing | Just' },
+            { loc: [6, 7], note: 'Maybe = Nothing | Just' },
+            { loc: [7, 8], note: 'Maybe = Nothing | Just' },
+            { loc: [9, 10], note: 'Maybe = Nothing | Just value' },
+            { loc: [5, 12], note: 'Maybe = Nothing | Just value' },
+          ]}
+        />
         <Slide
           transition={['fade']}
           bgColor="primary"
@@ -443,6 +457,19 @@ export default class Presentation extends React.Component {
             source={require('!raw-loader!./assets/example-simple2.text')}
           />
         </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('!raw-loader!./assets/example1/maybe.js')}
+          ranges={[
+            { loc: [0, 25] },
+            { loc: [0, 1] },
+            { loc: [13, 14] },
+            { loc: [14, 17] },
+            { loc: [19, 20] },
+            { loc: [20, 23] },
+          ]}
+        />
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
             src="https://codesandbox.io/embed/simple-after-hpcys?fontsize=14"
@@ -457,6 +484,9 @@ export default class Presentation extends React.Component {
             }}
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>New Feature!</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
@@ -493,10 +523,10 @@ export default class Presentation extends React.Component {
           <Heading>Let's call it map</Heading>
           <List>
             <ListItem>
-              Apply a <strong style={{ color: 'red' }}>function</strong> safely{' '}
+              Map a Maybe <strong style={{ color: 'red' }}>value</strong> safely{' '}
             </ListItem>
             <ListItem>
-              to a Maybe <strong style={{ color: 'red' }}>value</strong>
+              With a <strong style={{ color: 'red' }}>function</strong>
             </ListItem>
           </List>
         </Slide>
@@ -539,6 +569,9 @@ export default class Presentation extends React.Component {
             }}
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>New Feature!</Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
@@ -624,6 +657,24 @@ export default class Presentation extends React.Component {
             { loc: [36, 39] },
           ]}
         />
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <iframe
+            src="https://codesandbox.io/embed/apply-after-jb6ub?fontsize=14"
+            title="Application - after"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            style={{
+              width: '1000px',
+              height: '700px',
+              border: 0,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading>New Feature!</Heading>
+        </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <iframe
             src="https://codesandbox.io/embed/complete-after-qrl1c?fontsize=14"

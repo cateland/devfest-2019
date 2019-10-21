@@ -1,1 +1,1 @@
-Maybe = Just value | Nothing
+type Maybe = Just value | Nothing
