@@ -1,6 +1,6 @@
 function toUpperCase(value){
     if(value !== undefined && value !== null){
-      value.toUpperCase()
+      return value.toUpperCase()
     }
     // do something else
 }

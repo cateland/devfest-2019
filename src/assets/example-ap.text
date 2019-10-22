@@ -2,5 +2,6 @@ cookPopcorn = 🌽 => 🍯 => 🍿
 
 Just(cookPopcorn).apply(Just(🌽))
 // => Just(🍯 => 🍿)
+
 Just(🍯 => 🍿).apply(Just(🍯))
 // => Just(🍿)

@@ -437,11 +437,12 @@ export default class Presentation extends React.Component {
           ranges={[
             { loc: [0, 25], note: 'Maybe = Nothing | Just' },
             { loc: [0, 1], note: 'Maybe = Nothing | Just' },
+            { loc: [1, 4], note: 'Maybe = Nothing | Just' },
             { loc: [5, 6], note: 'Maybe = Nothing | Just' },
             { loc: [6, 7], note: 'Maybe = Nothing | Just' },
             { loc: [7, 8], note: 'Maybe = Nothing | Just' },
             { loc: [9, 10], note: 'Maybe = Nothing | Just value' },
-            { loc: [5, 12], note: 'Maybe = Nothing | Just value' },
+            { loc: [5, 11], note: 'Maybe = Nothing | Just value' },
           ]}
         />
         <Slide
