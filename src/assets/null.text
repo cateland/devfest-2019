@@ -1,4 +1,10 @@
-const foo: String = null;
-// => null
-const bar: String = foo.substring(0, 5);
-// => null is not an object (evaluating 'foo.substring')
+type Groupe = { id: string, groupId: string, name: string };
+async function fetchRandomMusicGroup () {
+    const response = await fetch(
+        "https://music.com/randomGroup"
+      );
+    const body: Groupe  = await response.json();
+    // => { id: 'musicId', groupId: 'groupId1' },
+    const bar: String = body.name.split(' ')[0];
+    // => VM120:1 Uncaught TypeError: Cannot read property 'split' of null
+}
