@@ -1,4 +1,4 @@
-Maybe.fromNullable(🌽)
-// => Just(🌽)
+Maybe.fromNullable(👨‍🎤)
+// => Just(👨‍🎤)
 Maybe.fromNullable(null)
 // => Nothing

@@ -1,4 +1,4 @@
-checkMaize = 🌽 => Just(🌽) | Nothing
+doIhaveASinger = unknown => Just(👨‍🎤) | Nothing
 
-Just(🌽).chain(checkMaize) => Just(🌽)
-Just(🐈).chain(checkMaize) => Nothing
+Just(👨‍🎤).chain(doIhaveASinger) => Just(👨‍🎤)
+Just(🐈).chain(doIhaveASinger) => Nothing

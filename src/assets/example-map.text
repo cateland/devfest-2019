@@ -1,6 +1,6 @@
-cookPopcorn = 🌽 => 🍿
+haveAShow = 👨‍🎤 => 💃
 
-Just(🌽).map(cookPopcorn)
-// => Just(🍿)
-Nothing.map(cookPopcorn)
+Just(👨‍🎤).map(haveAShow)
+// => Just(💃)
+Nothing.map(haveAShow)
 // => Nothing

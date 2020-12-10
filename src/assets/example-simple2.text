@@ -1,11 +1,13 @@
-Just(🌽).fold(
+// Je veut ecouter une chanson
+
+Just(👨‍🎤).fold(
     () => A , // on Nothing
-    (🌽) => A' // on Just
+    (👨‍🎤) => A' // on Just
 )
-// => A
+// => A => le chanteur chante
 
 Nothing.fold(
     () => A , // on Nothing
-    (🌽) => A' // on Just
+    (👨‍🎤) => A' // on Just
 )
-// => A'
+// => A' => pas de chanteur je lance spotify

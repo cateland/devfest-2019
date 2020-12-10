@@ -30,6 +30,12 @@ const images = {
   chatSchrodingerExplanation: require('./assets/cat-schrodinger-explanation.gif'),
   doubtfull: require('./assets/doubtfull.png'),
   blueScreen: require('./assets/bluescreen.png'),
+  structure: require('./assets/structure.png'),
+  creation: require('./assets/creation.png'),
+  destruction: require('./assets/destruction.png'),
+  map: require('./assets/map.png'),
+  apply: require('./assets/apply.png'),
+  chain: require('./assets/chain.png'),
 };
 
 preloader(images);
@@ -38,8 +44,8 @@ const theme = createTheme(
   {
     primary: 'white',
     secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quaternary: '#CECECE',
+    tertiary: '#ED147D',
+    quaternary: '#8C92A6',
   },
   {
     primary: 'Montserrat',
@@ -326,9 +332,9 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
           <List>
-            <ListItem>Array.find => nullable</ListItem>
-            <ListItem>Map.get => nullable</ListItem>
-            <ListItem>42 ➗ 0 => nullable</ListItem>
+            <ListItem>{'Array.find => nullable'}</ListItem>
+            <ListItem>{'Map.get => nullable'}</ListItem>
+            <ListItem>{'42 ➗ 0 => nullable'}</ListItem>
             <ListItem>...</ListItem>
           </List>
         </Slide>
@@ -406,6 +412,9 @@ export default class Presentation extends React.Component {
             source={require('!raw-loader!./assets/maybe.text')}
           />
         </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={images.structure.replace('/', '')} />
+        </Slide>
         <CodeSlide
           transition={[]}
           lang="js"
@@ -429,6 +438,9 @@ export default class Presentation extends React.Component {
             theme="external"
             source={require('!raw-loader!./assets/example-simple.text')}
           />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={images.creation.replace('/', '')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -457,6 +469,9 @@ export default class Presentation extends React.Component {
             theme="external"
             source={require('!raw-loader!./assets/example-simple2.text')}
           />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={images.destruction.replace('/', '')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -542,6 +557,9 @@ export default class Presentation extends React.Component {
             lang="javascript"
             source={require('!raw-loader!./assets/example-map.text')}
           />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={images.map.replace('/', '')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -633,6 +651,9 @@ export default class Presentation extends React.Component {
             source={require('!raw-loader!./assets/example-ap.text')}
           />
         </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={images.apply.replace('/', '')} />
+        </Slide>
         <Slide
           transition={['fade']}
           bgColor="primary"
@@ -710,6 +731,9 @@ export default class Presentation extends React.Component {
             source={require('!raw-loader!./assets/example-chain.text')}
           />
         </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={images.chain.replace('/', '')} />
+        </Slide>
         <CodeSlide
           transition={[]}
           lang="js"
@@ -756,10 +780,10 @@ export default class Presentation extends React.Component {
               @catelandaxel
             </Link>
           </Heading>
-          <Heading size={3}>Working at iAdvize</Heading>
+          <Heading size={3}>Working at Meetic</Heading>
           <Heading>
-            <Link target="_blank" href="https://twitter.com/iadvize/">
-              @iadvize
+            <Link target="_blank" href="https://twitter.com/MeeticGroup?s=20">
+              @MeeticGroup
             </Link>
           </Heading>
         </Slide>

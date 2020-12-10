@@ -1,7 +1,7 @@
-cookPopcorn = 🌽 => 🍯 => 🍿
+haveAGreatShow = 👨‍🎤 => 🎤 => 💃
 
-Just(cookPopcorn).apply(Just(🌽))
-// => Just(🍯 => 🍿)
+Just(haveAGreatShow).apply(Just(👨‍🎤))
+// => Just(🎤 => 💃)
 
-Just(🍯 => 🍿).apply(Just(🍯))
-// => Just(🍿)
+Just(🎤 => 💃).apply(Just(🎤))
+// => Just(💃)
